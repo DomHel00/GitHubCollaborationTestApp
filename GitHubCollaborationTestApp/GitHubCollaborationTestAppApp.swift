@@ -11,7 +11,7 @@ import SwiftUI
 struct GitHubCollaborationTestAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ToDoListView()
         }
     }
 }

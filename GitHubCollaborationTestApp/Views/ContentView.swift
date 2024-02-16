@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  ToDoListView.swift
 //  GitHubCollaborationTestApp
 //
 //  Created by Dominik Hel on 16.02.2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ToDoListView: View {
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -20,5 +20,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    ToDoListView()
 }
