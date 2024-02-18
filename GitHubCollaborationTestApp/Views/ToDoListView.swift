@@ -27,7 +27,7 @@ struct ToDoListView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     NavigationLink {
                         AddItemView { newItem in
-                            
+                            model.updateFile(with: newItem)
                         }
                     } label: {
                         Label("Add new item", systemImage: "plus")
@@ -35,6 +35,7 @@ struct ToDoListView: View {
                     
                 }
             }
+            .navigationTitle("ToDo Items")
         }
         
     }
