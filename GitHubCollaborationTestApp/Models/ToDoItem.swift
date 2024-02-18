@@ -1,8 +1,15 @@
 import Foundation
 
 struct ToDoItem: Codable {
-    let title: String
+    var title: String
     let creationDate: Date
-    let finishDate: Date
+    var finishDate: Date
     var isComplete: Bool
+    
+    init(title: String, finishDate: Date) {
+        self.title = title
+        self.creationDate = .now
+        self.finishDate = finishDate
+        self.isComplete = false
+    }
 }
