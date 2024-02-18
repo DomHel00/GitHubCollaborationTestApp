@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		44A7CD2E2B826A570088E981 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A7CD2D2B826A570088E981 /* ItemModel.swift */; };
+		44A7CD312B826FC60088E981 /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A7CD302B826FC60088E981 /* ItemViewModel.swift */; };
 		E90402322B7F5E6B002C4A85 /* GitHubCollaborationTestAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90402312B7F5E6B002C4A85 /* GitHubCollaborationTestAppApp.swift */; };
 		E90402342B7F5E6B002C4A85 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90402332B7F5E6B002C4A85 /* ContentView.swift */; };
 		E90402362B7F5E6D002C4A85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E90402352B7F5E6D002C4A85 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		44A7CD2D2B826A570088E981 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
+		44A7CD302B826FC60088E981 /* ItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
 		E904022E2B7F5E6B002C4A85 /* GitHubCollaborationTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubCollaborationTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E90402312B7F5E6B002C4A85 /* GitHubCollaborationTestAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubCollaborationTestAppApp.swift; sourceTree = "<group>"; };
 		E90402332B7F5E6B002C4A85 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -46,6 +48,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		44A7CD2F2B826F850088E981 /* ItemViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				44A7CD302B826FC60088E981 /* ItemViewModel.swift */,
+			);
+			path = ItemViewModel;
+			sourceTree = "<group>";
+		};
 		E90402252B7F5E6B002C4A85 = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +75,7 @@
 		E90402302B7F5E6B002C4A85 /* GitHubCollaborationTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				44A7CD2F2B826F850088E981 /* ItemViewModel */,
 				44A7CD2C2B826A3A0088E981 /* Model */,
 				E90402312B7F5E6B002C4A85 /* GitHubCollaborationTestAppApp.swift */,
 				E90402422B7F62C7002C4A85 /* Views */,
@@ -183,6 +194,7 @@
 				E90402322B7F5E6B002C4A85 /* GitHubCollaborationTestAppApp.swift in Sources */,
 				E90402452B7F6317002C4A85 /* Constants.swift in Sources */,
 				E90402472B7F639D002C4A85 /* ToDoFileManager.swift in Sources */,
+				44A7CD312B826FC60088E981 /* ItemViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

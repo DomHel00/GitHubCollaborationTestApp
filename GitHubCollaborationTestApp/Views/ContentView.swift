@@ -1,17 +1,41 @@
 import SwiftUI
 
 struct ToDoListView: View {
+    @StateObject var model = ItemViewModel()
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            if !model.items.isEmpty {
+                List {
+                    ForEach(model.items, id: \.title) { item in
+                        Text(item.title)
+                    }
+                }
+            } else {
+                VStack(spacing: 50) {
+                    Image(systemName: "note.text.badge.plus")
+                        .resizable()
+                        .frame(width: 120, height: 100)
+                        .opacity(0.3)
+                    Text("Nic tu ještě nemáš")
+                        .font(.largeTitle).opacity(0.3)
+                }
+            }
         }
-        .padding()
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    // function - add new item
+                } label: {
+                    Image(systemName: "plus")
+                }
+            }
+        }
     }
 }
 
 #Preview {
-    ToDoListView()
+    NavigationStack {
+        ToDoListView()
+    }
 }
