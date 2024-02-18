@@ -56,10 +56,10 @@
 			isa = PBXGroup;
 			children = (
 				E90402312B7F5E6B002C4A85 /* GitHubCollaborationTestAppApp.swift */,
-				E90402432B7F62E8002C4A85 /* ViewModels */,
 				E90402422B7F62C7002C4A85 /* Views */,
+				E9377A3C2B825C1600D42932 /* ViewModels */,
 				E90402402B7F62AC002C4A85 /* Managers */,
-				E904023F2B7F62A0002C4A85 /* Models */,
+				E9377A3B2B825BF600D42932 /* Models */,
 				E90402412B7F62BC002C4A85 /* Others */,
 				E90402352B7F5E6D002C4A85 /* Assets.xcassets */,
 				E90402372B7F5E6D002C4A85 /* Preview Content */,
@@ -73,13 +73,6 @@
 				E90402382B7F5E6D002C4A85 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		E904023F2B7F62A0002C4A85 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		E90402402B7F62AC002C4A85 /* Managers */ = {
@@ -106,7 +99,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		E90402432B7F62E8002C4A85 /* ViewModels */ = {
+		E9377A3B2B825BF600D42932 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E9377A3C2B825C1600D42932 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 			);
