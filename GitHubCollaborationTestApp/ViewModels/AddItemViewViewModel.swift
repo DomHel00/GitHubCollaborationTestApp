@@ -22,7 +22,7 @@ final class AddItemViewViewModel: ObservableObject {
     
     public func createNewItem() -> ToDoItem {
         let trimmedTitle = title.trimmingCharacters(in: .whitespacesAndNewlines)
-        let newItem = ToDoItem(title: trimmedTitle, creationDate: .now, finishDate: finishDate, isComplete: false)
+        let newItem = ToDoItem(title: trimmedTitle, finishDate: finishDate)
         return newItem
     }
 }
