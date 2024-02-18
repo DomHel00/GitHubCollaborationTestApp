@@ -14,7 +14,7 @@ final class ToDoFileManager {
     
     
     public func updateFile<T: Codable>(for url: URL, items: T) throws {
-        guard let encodedData = try? JSONEncoder().encode(item) else {
+        guard let encodedData = try? JSONEncoder().encode(items) else {
             throw JSONFileManagerError.encoderError
         }
         
