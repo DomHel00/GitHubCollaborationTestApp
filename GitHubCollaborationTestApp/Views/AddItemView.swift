@@ -20,19 +20,19 @@ struct AddItemView: View {
             }
             
             Section("Select a finish date") {
-                DatePicker("Select a finish date", selection: $vm.finishDate, in: Date.now...)
+                DatePicker("Finish date", selection: $vm.finishDate, in: Date.now...)
                     .pickerStyle(.inline)
             }
         }
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button(action: {
-                    let newItem = ToDoItem(title: vm.title, creationDate: .now, finishDate: vm.finishDate, isComplete: false)
-                    completion(newItem)
+                    completion(vm.createNewItem())
                     dismiss()
                 }, label: {
                     Text("Add")
                 })
+                .disabled(!vm.isValid)
             }
         }
         .navigationTitle("Add new item")
