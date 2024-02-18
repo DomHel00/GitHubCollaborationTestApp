@@ -1,6 +1,6 @@
 import Foundation
 
-struct ItemModel: Codable {
+struct ToDoItem: Codable {
     let title: String
     let creationDate: Date
     let finishDate: Date

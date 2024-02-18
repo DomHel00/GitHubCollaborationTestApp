@@ -1,22 +1,22 @@
 import Foundation
 
 class ItemViewModel: ObservableObject {
-    @Published var items = [ItemModel]()
+    @Published var items = [ToDoItem]()
     private let fileManager = ToDoFileManager()
 
     init() {
         do {
-            let dataLoaded: [ItemModel] = try fileManager.loadDataFromFile(file: Constants.FileURL)
+            let dataLoaded: [ToDoItem] = try fileManager.loadDataFromFile(file: Constants.fileURL)
             self.items = dataLoaded
         } catch {
             items = []
         }
     }
     
-    public func updateFile(with newItem: ItemModel) {
+    public func updateFile(with newItem: ToDoItem) {
         items.append(newItem)
         do {
-            try fileManager.updateFile(for: Constants.FileURL, items: items)
+            try fileManager.updateFile(for: Constants.fileURL, items: items)
 
         } catch  {
             fatalError()

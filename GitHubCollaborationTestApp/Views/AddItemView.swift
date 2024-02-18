@@ -10,7 +10,7 @@ import SwiftUI
 struct AddItemView: View {
     @Environment(\.dismiss) private var dismiss
     @StateObject private var vm = AddItemViewViewModel()
-    var completion: ((ItemModel)) -> Void
+    var completion: ((ToDoItem)) -> Void
     
     var body: some View {
         Form {
@@ -27,7 +27,7 @@ struct AddItemView: View {
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button(action: {
-                    let newItem = ItemModel(title: vm.title, creationDate: .now, finishDate: vm.finishDate, isComplete: false)
+                    let newItem = ToDoItem(title: vm.title, creationDate: .now, finishDate: vm.finishDate, isComplete: false)
                     completion(newItem)
                     dismiss()
                 }, label: {

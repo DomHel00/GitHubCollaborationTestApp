@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		44A7CD2E2B826A570088E981 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A7CD2D2B826A570088E981 /* ItemModel.swift */; };
+		44A7CD2E2B826A570088E981 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A7CD2D2B826A570088E981 /* ToDoItem.swift */; };
 		44A7CD312B826FC60088E981 /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A7CD302B826FC60088E981 /* ItemViewModel.swift */; };
 		E90402322B7F5E6B002C4A85 /* GitHubCollaborationTestAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90402312B7F5E6B002C4A85 /* GitHubCollaborationTestAppApp.swift */; };
 		E90402342B7F5E6B002C4A85 /* ToDoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90402332B7F5E6B002C4A85 /* ToDoListView.swift */; };
@@ -20,7 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		44A7CD2D2B826A570088E981 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
+		44A7CD2D2B826A570088E981 /* ToDoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
 		44A7CD302B826FC60088E981 /* ItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
 		E904022E2B7F5E6B002C4A85 /* GitHubCollaborationTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubCollaborationTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E90402312B7F5E6B002C4A85 /* GitHubCollaborationTestAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubCollaborationTestAppApp.swift; sourceTree = "<group>"; };
@@ -44,21 +44,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		44A7CD2C2B826A3A0088E981 /* Model */ = {
+		44A7CD2C2B826A3A0088E981 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				44A7CD2D2B826A570088E981 /* ItemModel.swift */,
+				44A7CD2D2B826A570088E981 /* ToDoItem.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		44A7CD2F2B826F850088E981 /* ItemViewModel */ = {
+		44A7CD2F2B826F850088E981 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				44A7CD302B826FC60088E981 /* ItemViewModel.swift */,
 				E976BC9C2B827C78005EDA74 /* AddItemViewViewModel.swift */,
 			);
-			path = ItemViewModel;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		E90402252B7F5E6B002C4A85 = {
@@ -80,10 +80,10 @@
 		E90402302B7F5E6B002C4A85 /* GitHubCollaborationTestApp */ = {
 			isa = PBXGroup;
 			children = (
-				44A7CD2F2B826F850088E981 /* ItemViewModel */,
-				44A7CD2C2B826A3A0088E981 /* Model */,
 				E90402312B7F5E6B002C4A85 /* GitHubCollaborationTestAppApp.swift */,
+				44A7CD2F2B826F850088E981 /* ViewModels */,
 				E90402422B7F62C7002C4A85 /* Views */,
+				44A7CD2C2B826A3A0088E981 /* Models */,
 				E90402402B7F62AC002C4A85 /* Managers */,
 				E90402412B7F62BC002C4A85 /* Others */,
 				E90402352B7F5E6D002C4A85 /* Assets.xcassets */,
@@ -196,7 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E976BC9D2B827C78005EDA74 /* AddItemViewViewModel.swift in Sources */,
-				44A7CD2E2B826A570088E981 /* ItemModel.swift in Sources */,
+				44A7CD2E2B826A570088E981 /* ToDoItem.swift in Sources */,
 				E90402342B7F5E6B002C4A85 /* ToDoListView.swift in Sources */,
 				E90402322B7F5E6B002C4A85 /* GitHubCollaborationTestAppApp.swift in Sources */,
 				E90402452B7F6317002C4A85 /* Constants.swift in Sources */,

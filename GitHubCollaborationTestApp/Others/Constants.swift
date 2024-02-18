@@ -8,7 +8,7 @@
 import Foundation
 
 struct Constants {
-    static var FileURL: URL {
+    static var fileURL: URL {
          let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
          return path.appendingPathComponent("todos.json")
     }
