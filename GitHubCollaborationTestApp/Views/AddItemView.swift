@@ -23,6 +23,16 @@ struct AddItemView: View {
                 DatePicker("Finish date", selection: $vm.finishDate, in: Date.now...)
                     .pickerStyle(.inline)
             }
+            
+            Section("Select priority") {
+                Picker("Select priority", selection: $vm.priority) {
+                    ForEach(ToDoItemPriority.allCases, id: \.self) { priority in
+                        Text(priority.title)
+                    }
+                }
+                .pickerStyle(.segmented)
+
+            }
         }
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
