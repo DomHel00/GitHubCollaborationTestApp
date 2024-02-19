@@ -1,22 +1,33 @@
 import SwiftUI
 
 struct RowItemView: View {
-    let title: String
-    var isComplete: Bool
-
+    let item: ToDoItem
+    var action: () -> Void
+    
     var body: some View {
-        HStack {
-            Image(systemName: isComplete ? "checkmark.circle" : "circle")
-            Text(title)
+        HStack(alignment: .top) {
+            Button {
+                action()
+            } label: {
+                item.symbol
+            }
+            VStack(alignment: .leading) {
+                HStack{
+                    if let prioritySymbol = item.priority.symbol {
+                        Text(prioritySymbol)
+                            .foregroundStyle(.red)
+                    }
+                    Text(item.title)
+                }
+                Text("\(item.finishDate.dateFormat())")
+                    .font(.callout)
+                    .opacity(0.6)
+            }
         }
         .font(.title2)
     }
 }
 
 #Preview {
-    VStack(alignment: .leading) {
-        RowItemView(title: "First item", isComplete: false)
-        RowItemView(title: "Done item", isComplete: true)
-    }
-
+    RowItemView(item: ToDoItem.mock, action: { })
 }
