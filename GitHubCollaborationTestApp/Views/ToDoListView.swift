@@ -9,9 +9,12 @@ struct ToDoListView: View {
                 if !model.items.isEmpty {
                     List {
                         ForEach(model.items, id: \.title) { item in
-                            Text(item.title)
+                            RowItemView(
+                                title: item.title,
+                                isComplete: item.isComplete)
                         }
                     }
+                    .listStyle(.plain)
                 } else {
                     VStack(spacing: 50) {
                         Image(systemName: "note.text.badge.plus")
