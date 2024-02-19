@@ -13,6 +13,7 @@ struct ToDoListView: View {
                                 title: item.title,
                                 isComplete: item.isComplete)
                         }
+                        .onDelete(perform: model.deleteItem)
                     }
                     .listStyle(.plain)
                 } else {

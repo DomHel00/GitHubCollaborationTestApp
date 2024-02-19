@@ -31,4 +31,18 @@ class ItemViewModel: ObservableObject {
             fatalError()
         }
     }
+
+    public func deleteItem(at offsets: IndexSet) {
+        for index in offsets {
+            let itemToDelete = items[index]
+            if let indexToDelete = items.firstIndex(where: { $0.title == itemToDelete.title}) {
+                items.remove(at: indexToDelete)
+                do {
+                    try fileManager.updateFile(for: Constants.fileURL, items: items)
+                } catch {
+                    fatalError()
+                }
+            }
+        }
+    }
 }
