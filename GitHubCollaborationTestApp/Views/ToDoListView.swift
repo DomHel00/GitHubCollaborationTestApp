@@ -5,10 +5,10 @@ struct ToDoListView: View {
     
     var body: some View {
         NavigationStack {
-            Group {
+            ZStack {
                 if !model.items.isEmpty {
                     List {
-                        ForEach(model.items, id: \.title) { item in
+                        ForEach(model.filteredItems, id: \.title) { item in
                             RowItemView(
                                 title: item.title,
                                 isComplete: item.isComplete)
@@ -26,6 +26,7 @@ struct ToDoListView: View {
                     }
                 }
             }
+            .searchable(text: $model.searchText, prompt: "Search item")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     NavigationLink {
@@ -35,12 +36,10 @@ struct ToDoListView: View {
                     } label: {
                         Label("Add new item", systemImage: "plus")
                     }
-                    
                 }
             }
             .navigationTitle("ToDo Items")
         }
-        
     }
 }
 
