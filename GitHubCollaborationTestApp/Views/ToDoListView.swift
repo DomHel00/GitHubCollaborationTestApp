@@ -2,15 +2,18 @@ import SwiftUI
 
 struct ToDoListView: View {
     @StateObject var model = ItemViewModel()
-    
+    @State private var itemIsComplete = false
+
     var body: some View {
         NavigationStack {
             ZStack {
                 if !model.items.isEmpty {
                     List {
-                        ForEach(model.filteredItems, id: \.title) { item in
+                        ForEach(model.filteredItems, id: \.id) { item in
                             RowItemView(item: item) {
-                                // TODO: - add function toggle isComplete
+                                itemIsComplete = item.isComplete
+                                itemIsComplete.toggle()
+                                model.updateIsComplete(for: item, to: itemIsComplete)
                             }
                         }
                         .onDelete(perform: model.deleteItem)

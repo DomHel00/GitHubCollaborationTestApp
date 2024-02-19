@@ -23,7 +23,8 @@ enum ToDoItemPriority: Codable, CaseIterable {
     }
 }
 
-struct ToDoItem: Codable {
+struct ToDoItem: Codable, Identifiable {
+    var id = UUID()
     var title: String
     let creationDate: Date
     var finishDate: Date
