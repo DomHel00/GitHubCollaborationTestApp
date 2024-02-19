@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		449483652B834029001D5962 /* RowItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449483642B834029001D5962 /* RowItemView.swift */; };
 		44A7CD2E2B826A570088E981 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A7CD2D2B826A570088E981 /* ToDoItem.swift */; };
 		44A7CD312B826FC60088E981 /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A7CD302B826FC60088E981 /* ItemViewModel.swift */; };
 		E90402322B7F5E6B002C4A85 /* GitHubCollaborationTestAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90402312B7F5E6B002C4A85 /* GitHubCollaborationTestAppApp.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		449483642B834029001D5962 /* RowItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowItemView.swift; sourceTree = "<group>"; };
 		44A7CD2D2B826A570088E981 /* ToDoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
 		44A7CD302B826FC60088E981 /* ItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
 		E904022E2B7F5E6B002C4A85 /* GitHubCollaborationTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubCollaborationTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +123,7 @@
 			children = (
 				E90402332B7F5E6B002C4A85 /* ToDoListView.swift */,
 				E976BC9E2B827CE5005EDA74 /* AddItemView.swift */,
+				449483642B834029001D5962 /* RowItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				44A7CD2E2B826A570088E981 /* ToDoItem.swift in Sources */,
 				E90402342B7F5E6B002C4A85 /* ToDoListView.swift in Sources */,
 				E90402322B7F5E6B002C4A85 /* GitHubCollaborationTestAppApp.swift in Sources */,
+				449483652B834029001D5962 /* RowItemView.swift in Sources */,
 				E90402452B7F6317002C4A85 /* Constants.swift in Sources */,
 				E90402472B7F639D002C4A85 /* ToDoFileManager.swift in Sources */,
 				44A7CD312B826FC60088E981 /* ItemViewModel.swift in Sources */,

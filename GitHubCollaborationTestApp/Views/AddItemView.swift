@@ -40,8 +40,6 @@ struct AddItemView: View {
     }
 }
 
-/*
 #Preview {
-    AddItemView()
+    AddItemView(completion: { _ in })
 }
-*/
