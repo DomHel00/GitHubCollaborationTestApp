@@ -9,9 +9,9 @@ struct ToDoListView: View {
                 if !model.items.isEmpty {
                     List {
                         ForEach(model.filteredItems, id: \.title) { item in
-                            RowItemView(
-                                title: item.title,
-                                isComplete: item.isComplete)
+                            RowItemView(item: item) {
+                                // TODO: - add function toggle isComplete
+                            }
                         }
                         .onDelete(perform: model.deleteItem)
                     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		445BFC782B83DE170019E424 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BFC772B83DE170019E424 /* Date.swift */; };
 		449483652B834029001D5962 /* RowItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449483642B834029001D5962 /* RowItemView.swift */; };
 		44A7CD2E2B826A570088E981 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A7CD2D2B826A570088E981 /* ToDoItem.swift */; };
 		44A7CD312B826FC60088E981 /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A7CD302B826FC60088E981 /* ItemViewModel.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		445BFC772B83DE170019E424 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		449483642B834029001D5962 /* RowItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowItemView.swift; sourceTree = "<group>"; };
 		44A7CD2D2B826A570088E981 /* ToDoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
 		44A7CD302B826FC60088E981 /* ItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
@@ -46,6 +48,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		445BFC762B83DE060019E424 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				445BFC772B83DE170019E424 /* Date.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		44A7CD2C2B826A3A0088E981 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				E90402312B7F5E6B002C4A85 /* GitHubCollaborationTestAppApp.swift */,
+				445BFC762B83DE060019E424 /* Extension */,
 				44A7CD2F2B826F850088E981 /* ViewModels */,
 				E90402422B7F62C7002C4A85 /* Views */,
 				44A7CD2C2B826A3A0088E981 /* Models */,
@@ -199,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E976BC9D2B827C78005EDA74 /* AddItemViewViewModel.swift in Sources */,
+				445BFC782B83DE170019E424 /* Date.swift in Sources */,
 				44A7CD2E2B826A570088E981 /* ToDoItem.swift in Sources */,
 				E90402342B7F5E6B002C4A85 /* ToDoListView.swift in Sources */,
 				E90402322B7F5E6B002C4A85 /* GitHubCollaborationTestAppApp.swift in Sources */,
