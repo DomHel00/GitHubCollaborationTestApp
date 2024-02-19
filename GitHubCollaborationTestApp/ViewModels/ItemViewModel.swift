@@ -21,28 +21,34 @@ class ItemViewModel: ObservableObject {
             items = []
         }
     }
-    
+
     public func updateFile(with newItem: ToDoItem) {
         items.append(newItem)
-        do {
-            try fileManager.updateFile(for: Constants.fileURL, items: items)
-
-        } catch  {
-            fatalError()
-        }
+        saveItemsToFile()
     }
+
+    private func saveItemsToFile() {
+           do {
+               try fileManager.updateFile(for: Constants.fileURL, items: items)
+           } catch {
+               fatalError()
+           }
+       }
 
     public func deleteItem(at offsets: IndexSet) {
         for index in offsets {
             let itemToDelete = items[index]
             if let indexToDelete = items.firstIndex(where: { $0.title == itemToDelete.title}) {
                 items.remove(at: indexToDelete)
-                do {
-                    try fileManager.updateFile(for: Constants.fileURL, items: items)
-                } catch {
-                    fatalError()
-                }
+                saveItemsToFile()
             }
+        }
+    }
+
+    func updateIsComplete(for selectedItem: ToDoItem, to isComplete: Bool) {
+        if let index = items.firstIndex(where: { $0.id == selectedItem.id }) {
+            items[index].isComplete = isComplete
+            saveItemsToFile()
         }
     }
 }
