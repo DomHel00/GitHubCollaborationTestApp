@@ -21,6 +21,15 @@ enum ToDoItemPriority: Codable, CaseIterable {
         case .high: return "!!!"
         }
     }
+    
+    var color: Color {
+        switch self {
+        case .none: return .green
+        case .low: return .yellow
+        case .normal: return .orange
+        case .high: return .red
+        }
+    }
 }
 
 struct ToDoItem: Codable, Identifiable {
