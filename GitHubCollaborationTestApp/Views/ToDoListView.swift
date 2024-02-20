@@ -11,9 +11,7 @@ struct ToDoListView: View {
                     List {
                         ForEach(model.filteredItems, id: \.id) { item in
                             RowItemView(item: item) {
-                                itemIsComplete = item.isComplete
-                                itemIsComplete.toggle()
-                                model.updateIsComplete(for: item, to: itemIsComplete)
+                                model.updateIsComplete(for: item)
                             }
                         }
                         .onDelete(perform: model.deleteItem)

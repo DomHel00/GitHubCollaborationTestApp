@@ -13,6 +13,7 @@ class ItemViewModel: ObservableObject {
             return items.filter { $0.title.localizedCaseInsensitiveContains(searchText)}
         }
     }
+    
     init() {
         do {
             let dataLoaded: [ToDoItem] = try fileManager.loadDataFromFile(file: Constants.fileURL)
@@ -45,10 +46,11 @@ class ItemViewModel: ObservableObject {
         }
     }
 
-    func updateIsComplete(for selectedItem: ToDoItem, to isComplete: Bool) {
-        if let index = items.firstIndex(where: { $0.id == selectedItem.id }) {
-            items[index].isComplete = isComplete
-            saveItemsToFile()
+    func updateIsComplete(for selectedItem: ToDoItem) {
+        guard let selectedItemIndex = items.firstIndex(of: selectedItem) else {
+            return
         }
+        items[selectedItemIndex].isComplete.toggle()
+        saveItemsToFile()
     }
 }
