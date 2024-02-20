@@ -65,6 +65,6 @@ extension ToDoItem {
 
 extension ToDoItem: Equatable {
     static func ==(lhs: ToDoItem, rhs: ToDoItem) -> Bool {
-        return lhs.title == rhs.title && lhs.creationDate == rhs.creationDate && lhs.finishDate == rhs.finishDate && lhs.isComplete == rhs.isComplete && lhs.priority == rhs.priority
+        return lhs.id == rhs.id && lhs.title == rhs.title && lhs.creationDate == rhs.creationDate && lhs.finishDate == rhs.finishDate && lhs.isComplete == rhs.isComplete && lhs.priority == rhs.priority && lhs.symbol == rhs.symbol
       }
 }
