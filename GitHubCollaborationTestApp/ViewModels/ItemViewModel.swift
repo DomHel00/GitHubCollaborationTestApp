@@ -3,6 +3,9 @@ import Foundation
 class ItemViewModel: ObservableObject {
     @Published var items = [ToDoItem]()
     @Published var searchText = ""
+    @Published var selectedSortTitle: SortTitle = .title
+    @Published var sortAscending = true
+
     private let fileManager = ToDoFileManager()
 
     var filteredItems: [ToDoItem] {
@@ -52,5 +55,17 @@ class ItemViewModel: ObservableObject {
         }
         items[selectedItemIndex].isComplete.toggle()
         saveItemsToFile()
+    }
+
+    public func sortItems(by title: SortTitle) {
+        selectedSortTitle = title
+        switch selectedSortTitle {
+        case .title:
+            items.sort(by: { sortAscending ? $0.title < $1.title : $0.title > $1.title })
+        case .priority:
+            items.sort(by: { sortAscending ? $0.priority < $1.priority : $0.priority > $1.priority })
+        case .date:
+            items.sort(by: { sortAscending ? $0.finishDate < $1.finishDate : $0.finishDate > $1.finishDate })
+        }
     }
 }

@@ -39,6 +39,32 @@ struct ToDoListView: View {
                         Label("Add new item", systemImage: "plus")
                     }
                 }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Menu {
+                        Section {
+                            Button {
+                                model.sortItems(by: .title)
+                            } label: {
+                                Text(SortTitle.title.rawValue)
+                            }
+                            Button {
+                                model.sortItems(by: .date)
+                            } label: {
+                                Text(SortTitle.date.rawValue)
+                            }
+                            Button {
+                                model.sortItems(by: .priority)
+                            } label: {
+                                Text(SortTitle.priority.rawValue)
+                            }
+                        } header: {
+                            Text("Seřadit podle")
+                        }
+
+                    } label: {
+                        Image(systemName: "arrow.up.arrow.down")
+                    }
+                }
             }
             .navigationTitle("ToDo Items")
         }

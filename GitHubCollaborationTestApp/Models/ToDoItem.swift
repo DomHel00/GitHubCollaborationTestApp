@@ -1,7 +1,13 @@
 import Foundation
 import SwiftUI
 
-enum ToDoItemPriority: Codable, CaseIterable {
+enum SortTitle: String {
+    case title = "Název"
+    case priority = "Priorita"
+    case date = "Datum"
+}
+
+enum ToDoItemPriority: Codable, CaseIterable, Comparable {
     case none, low, normal, high
 
     var title: String {
