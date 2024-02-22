@@ -16,7 +16,7 @@ class ItemViewModel: ObservableObject {
             return items.filter { $0.title.localizedCaseInsensitiveContains(searchText)}
         }
     }
-    
+
     init() {
         do {
             let dataLoaded: [ToDoItem] = try fileManager.loadDataFromFile(file: Constants.fileURL)
@@ -32,12 +32,12 @@ class ItemViewModel: ObservableObject {
     }
 
     private func saveItemsToFile() {
-           do {
-               try fileManager.updateFile(for: Constants.fileURL, items: items)
-           } catch {
-               fatalError()
-           }
-       }
+        do {
+            try fileManager.updateFile(for: Constants.fileURL, items: items)
+        } catch {
+            fatalError()
+        }
+    }
 
     public func deleteItem(at offsets: IndexSet) {
         for index in offsets {
@@ -66,6 +66,10 @@ class ItemViewModel: ObservableObject {
             items.sort(by: { sortAscending ? $0.priority < $1.priority : $0.priority > $1.priority })
         case .date:
             items.sort(by: { sortAscending ? $0.finishDate < $1.finishDate : $0.finishDate > $1.finishDate })
+        case .finish:
+            items.sort(by: { sortAscending ? $0.isComplete && !$1.isComplete : !$0.isComplete && $1.isComplete })
+        case .incomplete:
+            items.sort(by: { sortAscending ? !$0.isComplete && $1.isComplete : $0.isComplete && !$1.isComplete })
         }
     }
 }

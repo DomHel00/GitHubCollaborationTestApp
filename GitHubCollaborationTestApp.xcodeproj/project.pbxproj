@@ -11,6 +11,7 @@
 		449483652B834029001D5962 /* RowItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449483642B834029001D5962 /* RowItemView.swift */; };
 		44A7CD2E2B826A570088E981 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A7CD2D2B826A570088E981 /* ToDoItem.swift */; };
 		44A7CD312B826FC60088E981 /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A7CD302B826FC60088E981 /* ItemViewModel.swift */; };
+		44AAD2572B875BD9004DE508 /* SortTitleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AAD2562B875BD9004DE508 /* SortTitleButtonView.swift */; };
 		E90402322B7F5E6B002C4A85 /* GitHubCollaborationTestAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90402312B7F5E6B002C4A85 /* GitHubCollaborationTestAppApp.swift */; };
 		E90402342B7F5E6B002C4A85 /* ToDoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90402332B7F5E6B002C4A85 /* ToDoListView.swift */; };
 		E90402362B7F5E6D002C4A85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E90402352B7F5E6D002C4A85 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 		449483642B834029001D5962 /* RowItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowItemView.swift; sourceTree = "<group>"; };
 		44A7CD2D2B826A570088E981 /* ToDoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
 		44A7CD302B826FC60088E981 /* ItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
+		44AAD2562B875BD9004DE508 /* SortTitleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortTitleButtonView.swift; sourceTree = "<group>"; };
 		E904022E2B7F5E6B002C4A85 /* GitHubCollaborationTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubCollaborationTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E90402312B7F5E6B002C4A85 /* GitHubCollaborationTestAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubCollaborationTestAppApp.swift; sourceTree = "<group>"; };
 		E90402332B7F5E6B002C4A85 /* ToDoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListView.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				E90402332B7F5E6B002C4A85 /* ToDoListView.swift */,
 				E976BC9E2B827CE5005EDA74 /* AddItemView.swift */,
 				449483642B834029001D5962 /* RowItemView.swift */,
+				44AAD2562B875BD9004DE508 /* SortTitleButtonView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				E90402322B7F5E6B002C4A85 /* GitHubCollaborationTestAppApp.swift in Sources */,
 				449483652B834029001D5962 /* RowItemView.swift in Sources */,
 				E90402452B7F6317002C4A85 /* Constants.swift in Sources */,
+				44AAD2572B875BD9004DE508 /* SortTitleButtonView.swift in Sources */,
 				E90402472B7F639D002C4A85 /* ToDoFileManager.swift in Sources */,
 				44A7CD312B826FC60088E981 /* ItemViewModel.swift in Sources */,
 				E976BC9F2B827CE5005EDA74 /* AddItemView.swift in Sources */,

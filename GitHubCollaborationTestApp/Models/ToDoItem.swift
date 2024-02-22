@@ -5,6 +5,8 @@ enum SortTitle: String, CaseIterable {
     case title = "Název"
     case priority = "Priorita"
     case date = "Datum"
+    case finish = "Dokončené"
+    case incomplete = "Nedokončené"
 }
 
 enum SortOrder: String, CaseIterable {
