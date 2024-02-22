@@ -45,20 +45,53 @@ struct ToDoListView: View {
                             Button {
                                 model.sortItems(by: .title)
                             } label: {
-                                Text(SortTitle.title.rawValue)
+                                HStack {
+                                    Text(SortTitle.title.rawValue)
+                                    Image(systemName: SortTitle.title == model.selectedSortTitle ? "checkmark" : "")
+                                }
                             }
                             Button {
                                 model.sortItems(by: .date)
                             } label: {
-                                Text(SortTitle.date.rawValue)
+                                HStack {
+                                    Text(SortTitle.date.rawValue)
+                                    Image(systemName: SortTitle.date == model.selectedSortTitle ? "checkmark" : "")
+                                }
                             }
                             Button {
                                 model.sortItems(by: .priority)
                             } label: {
-                                Text(SortTitle.priority.rawValue)
+                                HStack {
+                                    Text(SortTitle.priority.rawValue)
+                                    Image(systemName: SortTitle.priority == model.selectedSortTitle ? "checkmark" : "")
+                                }
                             }
                         } header: {
                             Text("Seřadit podle")
+                        }
+
+                        Section {
+                            // Ascending button
+                            Button {
+                                model.sortAscending = true
+                                model.sortItems(by: model.selectedSortTitle)
+                            } label: {
+                                HStack {
+                                    Text(SortOrder.ascending.rawValue)
+                                    Image(systemName: model.sortAscending ? "checkmark" : "")
+                                }
+                            }
+                            
+                            // Descending button
+                            Button {
+                                model.sortAscending = false
+                                model.sortItems(by: model.selectedSortTitle)
+                            } label: {
+                                HStack {
+                                    Text(SortOrder.descending.rawValue)
+                                    Image(systemName: model.sortAscending ? "" : "checkmark" )
+                                }
+                            }
                         }
 
                     } label: {

@@ -1,10 +1,15 @@
 import Foundation
 import SwiftUI
 
-enum SortTitle: String {
+enum SortTitle: String, CaseIterable {
     case title = "Název"
     case priority = "Priorita"
     case date = "Datum"
+}
+
+enum SortOrder: String, CaseIterable {
+    case ascending = "Vzestupně"
+    case descending = "Sestupně"
 }
 
 enum ToDoItemPriority: Codable, CaseIterable, Comparable {
@@ -16,15 +21,6 @@ enum ToDoItemPriority: Codable, CaseIterable, Comparable {
         case .low: return "Low"
         case .normal: return "Normal"
         case .high: return "High"
-        }
-    }
-
-    var symbol: String? {
-        switch self {
-        case .none: return nil
-        case .low: return "!"
-        case .normal: return "!!"
-        case .high: return "!!!"
         }
     }
     
