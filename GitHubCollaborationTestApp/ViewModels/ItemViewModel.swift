@@ -6,9 +6,9 @@ class ItemViewModel: ObservableObject {
     @Published var selectedSortTitle: SortTitle = .name
     @Published var sortAscending = true
     @Published var itemForEditing: ToDoItem? = nil
-  
+
     private let fileManager = ToDoFileManager()
-    
+
     var filteredItems: [ToDoItem] {
         if searchText.isEmpty || searchText == "" {
             return items
@@ -26,12 +26,12 @@ class ItemViewModel: ObservableObject {
             items = []
         }
     }
-    
+
     public func updateFile(with newItem: ToDoItem) {
         items.append(newItem)
         saveItemsToFile()
     }
-    
+
     private func saveItemsToFile() {
         do {
             try fileManager.updateFile(for: Constants.fileURL, items: items)
@@ -49,7 +49,7 @@ class ItemViewModel: ObservableObject {
             }
         }
     }
-    
+
     public func updateIsComplete(for selectedItem: ToDoItem) {
         guard let selectedItemIndex = items.firstIndex(of: selectedItem) else {
             return
@@ -72,12 +72,13 @@ class ItemViewModel: ObservableObject {
         case .uncompleted:
             items.sort(by: { sortAscending ? !$0.isComplete && $1.isComplete : $0.isComplete && !$1.isComplete })
         }
-    
-    public func updateItemsWithEditItem(oldItem: ToDoItem, editedItem: ToDoItem) {
-        guard let index = items.firstIndex(of: oldItem) else {
-            return
-        }
-        items[index] = editedItem
-        saveItemsToFile()
     }
+
+        public func updateItemsWithEditItem(oldItem: ToDoItem, editedItem: ToDoItem) {
+            guard let index = items.firstIndex(of: oldItem) else {
+                return
+            }
+            items[index] = editedItem
+            saveItemsToFile()
+        }
 }
