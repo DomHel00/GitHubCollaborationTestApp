@@ -19,6 +19,8 @@
 		E90402472B7F639D002C4A85 /* ToDoFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90402462B7F639D002C4A85 /* ToDoFileManager.swift */; };
 		E976BC9D2B827C78005EDA74 /* AddItemViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E976BC9C2B827C78005EDA74 /* AddItemViewViewModel.swift */; };
 		E976BC9F2B827CE5005EDA74 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E976BC9E2B827CE5005EDA74 /* AddItemView.swift */; };
+		E99CC1552B84AA6800388768 /* EditItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99CC1542B84AA6800388768 /* EditItemView.swift */; };
+		E9E345A42B874B2400484081 /* EditItemViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E345A32B874B2400484081 /* EditItemViewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		E90402462B7F639D002C4A85 /* ToDoFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoFileManager.swift; sourceTree = "<group>"; };
 		E976BC9C2B827C78005EDA74 /* AddItemViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewViewModel.swift; sourceTree = "<group>"; };
 		E976BC9E2B827CE5005EDA74 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
+		E99CC1542B84AA6800388768 /* EditItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemView.swift; sourceTree = "<group>"; };
+		E9E345A32B874B2400484081 /* EditItemViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemViewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,7 @@
 			children = (
 				44A7CD302B826FC60088E981 /* ItemViewModel.swift */,
 				E976BC9C2B827C78005EDA74 /* AddItemViewViewModel.swift */,
+				E9E345A32B874B2400484081 /* EditItemViewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -135,6 +140,7 @@
 				E90402332B7F5E6B002C4A85 /* ToDoListView.swift */,
 				E976BC9E2B827CE5005EDA74 /* AddItemView.swift */,
 				449483642B834029001D5962 /* RowItemView.swift */,
+				E99CC1542B84AA6800388768 /* EditItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -215,9 +221,11 @@
 				E90402342B7F5E6B002C4A85 /* ToDoListView.swift in Sources */,
 				E90402322B7F5E6B002C4A85 /* GitHubCollaborationTestAppApp.swift in Sources */,
 				449483652B834029001D5962 /* RowItemView.swift in Sources */,
+				E99CC1552B84AA6800388768 /* EditItemView.swift in Sources */,
 				E90402452B7F6317002C4A85 /* Constants.swift in Sources */,
 				E90402472B7F639D002C4A85 /* ToDoFileManager.swift in Sources */,
 				44A7CD312B826FC60088E981 /* ItemViewModel.swift in Sources */,
+				E9E345A42B874B2400484081 /* EditItemViewViewModel.swift in Sources */,
 				E976BC9F2B827CE5005EDA74 /* AddItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

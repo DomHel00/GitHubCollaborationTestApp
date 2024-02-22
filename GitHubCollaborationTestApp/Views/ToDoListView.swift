@@ -3,7 +3,7 @@ import SwiftUI
 struct ToDoListView: View {
     @StateObject var model = ItemViewModel()
     @State private var itemIsComplete = false
-
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -12,6 +12,12 @@ struct ToDoListView: View {
                         ForEach(model.filteredItems, id: \.id) { item in
                             RowItemView(item: item) {
                                 model.updateIsComplete(for: item)
+                            }
+                            .swipeActions(edge: .leading, allowsFullSwipe: true) {
+                                Button("Edit") {
+                                    model.itemForEditing = item
+                                }
+                                .tint(.gray)
                             }
                         }
                         .onDelete(perform: model.deleteItem)
@@ -28,6 +34,13 @@ struct ToDoListView: View {
                     }
                 }
             }
+            .sheet(item: $model.itemForEditing, content: { itemForEditing in
+                EditItemView(itemForEditing: itemForEditing) { editedItem in
+                    if let editedItem = editedItem {
+                        model.updateItemsWithEditItem(oldItem: itemForEditing, editedItem: editedItem)
+                    }
+                }
+            })
             .searchable(text: $model.searchText, prompt: "Search item")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
