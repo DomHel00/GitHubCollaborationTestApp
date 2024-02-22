@@ -3,7 +3,10 @@ import Foundation
 class ItemViewModel: ObservableObject {
     @Published var items = [ToDoItem]()
     @Published var searchText = ""
+    @Published var selectedSortTitle: SortTitle = .name
+    @Published var sortAscending = true
     @Published var itemForEditing: ToDoItem? = nil
+  
     private let fileManager = ToDoFileManager()
     
     var filteredItems: [ToDoItem] {
@@ -14,7 +17,7 @@ class ItemViewModel: ObservableObject {
             return items.filter { $0.title.localizedCaseInsensitiveContains(searchText)}
         }
     }
-    
+
     init() {
         do {
             let dataLoaded: [ToDoItem] = try fileManager.loadDataFromFile(file: Constants.fileURL)
@@ -36,7 +39,7 @@ class ItemViewModel: ObservableObject {
             fatalError()
         }
     }
-    
+
     public func deleteItem(at offsets: IndexSet) {
         for index in offsets {
             let itemToDelete = items[index]
@@ -54,6 +57,21 @@ class ItemViewModel: ObservableObject {
         items[selectedItemIndex].isComplete.toggle()
         saveItemsToFile()
     }
+
+    public func sortItems(by title: SortTitle) {
+        selectedSortTitle = title
+        switch selectedSortTitle {
+        case .name:
+            items.sort(by: { sortAscending ? $0.title < $1.title : $0.title > $1.title })
+        case .priority:
+            items.sort(by: { sortAscending ? $0.priority < $1.priority : $0.priority > $1.priority })
+        case .date:
+            items.sort(by: { sortAscending ? $0.finishDate < $1.finishDate : $0.finishDate > $1.finishDate })
+        case .completed:
+            items.sort(by: { sortAscending ? $0.isComplete && !$1.isComplete : !$0.isComplete && $1.isComplete })
+        case .uncompleted:
+            items.sort(by: { sortAscending ? !$0.isComplete && $1.isComplete : $0.isComplete && !$1.isComplete })
+        }
     
     public func updateItemsWithEditItem(oldItem: ToDoItem, editedItem: ToDoItem) {
         guard let index = items.firstIndex(of: oldItem) else {

@@ -20,6 +20,7 @@ struct RowItemView: View {
                 
                 HStack() {
                     Text(item.priority.title)
+                        .padding(.horizontal)
                         .background(RoundedRectangle(cornerRadius: 8).fill(item.priority.color))
                     
                     Text("\(item.finishDate.dateFormat())")
