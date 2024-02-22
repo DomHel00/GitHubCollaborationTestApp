@@ -3,7 +3,7 @@ import Foundation
 class ItemViewModel: ObservableObject {
     @Published var items = [ToDoItem]()
     @Published var searchText = ""
-    @Published var selectedSortTitle: SortTitle = .title
+    @Published var selectedSortTitle: SortTitle = .name
     @Published var sortAscending = true
 
     private let fileManager = ToDoFileManager()
@@ -60,15 +60,15 @@ class ItemViewModel: ObservableObject {
     public func sortItems(by title: SortTitle) {
         selectedSortTitle = title
         switch selectedSortTitle {
-        case .title:
+        case .name:
             items.sort(by: { sortAscending ? $0.title < $1.title : $0.title > $1.title })
         case .priority:
             items.sort(by: { sortAscending ? $0.priority < $1.priority : $0.priority > $1.priority })
         case .date:
             items.sort(by: { sortAscending ? $0.finishDate < $1.finishDate : $0.finishDate > $1.finishDate })
-        case .finish:
+        case .completed:
             items.sort(by: { sortAscending ? $0.isComplete && !$1.isComplete : !$0.isComplete && $1.isComplete })
-        case .incomplete:
+        case .uncompleted:
             items.sort(by: { sortAscending ? !$0.isComplete && $1.isComplete : $0.isComplete && !$1.isComplete })
         }
     }

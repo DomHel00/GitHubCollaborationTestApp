@@ -23,7 +23,7 @@ struct ToDoListView: View {
                             .resizable()
                             .frame(width: 120, height: 100)
                             .opacity(0.3)
-                        Text("Nic tu ještě nemáš")
+                        Text("You don't have anything here yet")
                             .font(.largeTitle).opacity(0.3)
                     }
                 }
@@ -57,11 +57,11 @@ extension ToDoListView {
     private var contentMenuSortTitle: some View {
         Section {
             Button {
-                model.sortItems(by: .title)
+                model.sortItems(by: .name)
             } label: {
                 HStack {
-                    Text(SortTitle.title.rawValue)
-                    Image(systemName: SortTitle.title == model.selectedSortTitle ? "checkmark" : "")
+                    Text(SortTitle.name.rawValue)
+                    Image(systemName: SortTitle.name == model.selectedSortTitle ? "checkmark" : "")
                 }
             }
             Button {
@@ -82,24 +82,24 @@ extension ToDoListView {
             }
 
             Button {
-                model.sortItems(by: .finish)
+                model.sortItems(by: .completed)
             } label: {
                 HStack {
-                    Text(SortTitle.finish.rawValue)
-                    Image(systemName: SortTitle.finish == model.selectedSortTitle ? "checkmark" : "")
+                    Text(SortTitle.completed.rawValue)
+                    Image(systemName: SortTitle.completed == model.selectedSortTitle ? "checkmark" : "")
                 }
             }
 
             Button {
-                model.sortItems(by: .incomplete)
+                model.sortItems(by: .uncompleted)
             } label: {
                 HStack {
-                    Text(SortTitle.incomplete.rawValue)
-                    Image(systemName: SortTitle.incomplete == model.selectedSortTitle ? "checkmark" : "")
+                    Text(SortTitle.uncompleted.rawValue)
+                    Image(systemName: SortTitle.uncompleted == model.selectedSortTitle ? "checkmark" : "")
                 }
             }
         } header: {
-            Text("Seřadit podle")
+            Text("Sort by:")
         }
     }
 
@@ -126,6 +126,8 @@ extension ToDoListView {
                     Image(systemName: model.sortAscending ? "" : "checkmark" )
                 }
             }
+        } header: {
+            Text("Sort by order:")
         }
     }
 }

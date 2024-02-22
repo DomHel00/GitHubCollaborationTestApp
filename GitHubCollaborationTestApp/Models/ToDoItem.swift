@@ -2,16 +2,16 @@ import Foundation
 import SwiftUI
 
 enum SortTitle: String, CaseIterable {
-    case title = "Název"
-    case priority = "Priorita"
-    case date = "Datum"
-    case finish = "Dokončené"
-    case incomplete = "Nedokončené"
+    case name = "Name"
+    case priority = "Priority"
+    case date = "Date"
+    case completed = "Completed"
+    case uncompleted = "Uncompleted"
 }
 
 enum SortOrder: String, CaseIterable {
-    case ascending = "Vzestupně"
-    case descending = "Sestupně"
+    case ascending = "Ascending"
+    case descending = "Descending"
 }
 
 enum ToDoItemPriority: Codable, CaseIterable, Comparable {

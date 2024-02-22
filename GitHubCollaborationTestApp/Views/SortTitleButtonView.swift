@@ -18,6 +18,6 @@ struct ContentMenuButtonView: View {
 }
 
 #Preview {
-    ContentMenuButtonView(title: SortTitle.title.rawValue, isTapped: true, action: { }) 
+    ContentMenuButtonView(title: SortTitle.name.rawValue, isTapped: true, action: { }) 
 }
 
