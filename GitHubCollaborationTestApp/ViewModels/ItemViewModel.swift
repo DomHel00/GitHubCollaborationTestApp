@@ -55,23 +55,40 @@ class ItemViewModel: ObservableObject {
             return
         }
         items[selectedItemIndex].isComplete.toggle()
+
+        // Move completed items to the end of the array
+        if selectedItem.isComplete {
+            let completedItem = items.remove(at: selectedItemIndex)
+            items.append(completedItem)
+        }
+
         saveItemsToFile()
+
+        // Re-sort items
+        sortItems(by: selectedSortTitle)
     }
 
     public func sortItems(by title: SortTitle) {
         selectedSortTitle = title
         switch selectedSortTitle {
         case .name:
-            items.sort(by: { sortAscending ? $0.title < $1.title : $0.title > $1.title })
+            items.sort(by: { sortAscending ? ($0.title < $1.title) : ($0.title > $1.title) })
         case .priority:
-            items.sort(by: { sortAscending ? $0.priority < $1.priority : $0.priority > $1.priority })
+            items.sort(by: { sortAscending ? ($0.priority < $1.priority) : ($0.priority > $1.priority) })
         case .date:
-            items.sort(by: { sortAscending ? $0.finishDate < $1.finishDate : $0.finishDate > $1.finishDate })
-        case .completed:
-            items.sort(by: { sortAscending ? $0.isComplete && !$1.isComplete : !$0.isComplete && $1.isComplete })
-        case .uncompleted:
-            items.sort(by: { sortAscending ? !$0.isComplete && $1.isComplete : $0.isComplete && !$1.isComplete })
+            items.sort(by: { sortAscending ? ($0.finishDate < $1.finishDate) : ($0.finishDate > $1.finishDate) })
         }
+
+        // Move completed items to the end of the array
+            items.sort { (item1, item2) -> Bool in
+                if item1.isComplete && !item2.isComplete {
+                    return false
+                } else if !item1.isComplete && item2.isComplete {
+                    return true
+                } else {
+                    return false
+                }
+            }
     }
 
         public func updateItemsWithEditItem(oldItem: ToDoItem, editedItem: ToDoItem) {

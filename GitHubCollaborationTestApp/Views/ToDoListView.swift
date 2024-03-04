@@ -93,24 +93,6 @@ extension ToDoListView {
                     Image(systemName: SortTitle.priority == model.selectedSortTitle ? "checkmark" : "")
                 }
             }
-
-            Button {
-                model.sortItems(by: .completed)
-            } label: {
-                HStack {
-                    Text(SortTitle.completed.rawValue)
-                    Image(systemName: SortTitle.completed == model.selectedSortTitle ? "checkmark" : "")
-                }
-            }
-
-            Button {
-                model.sortItems(by: .uncompleted)
-            } label: {
-                HStack {
-                    Text(SortTitle.uncompleted.rawValue)
-                    Image(systemName: SortTitle.uncompleted == model.selectedSortTitle ? "checkmark" : "")
-                }
-            }
         } header: {
             Text("Sort by:")
         }
