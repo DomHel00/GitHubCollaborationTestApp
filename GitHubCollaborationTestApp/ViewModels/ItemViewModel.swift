@@ -60,25 +60,48 @@ class ItemViewModel: ObservableObject {
 
     public func sortItems(by title: SortTitle) {
         selectedSortTitle = title
-        switch selectedSortTitle {
-        case .name:
-            items.sort(by: { sortAscending ? $0.title < $1.title : $0.title > $1.title })
-        case .priority:
-            items.sort(by: { sortAscending ? $0.priority < $1.priority : $0.priority > $1.priority })
-        case .date:
-            items.sort(by: { sortAscending ? $0.finishDate < $1.finishDate : $0.finishDate > $1.finishDate })
-        case .completed:
-            items.sort(by: { sortAscending ? $0.isComplete && !$1.isComplete : !$0.isComplete && $1.isComplete })
-        case .uncompleted:
-            items.sort(by: { sortAscending ? !$0.isComplete && $1.isComplete : $0.isComplete && !$1.isComplete })
-        }
-    }
-
-        public func updateItemsWithEditItem(oldItem: ToDoItem, editedItem: ToDoItem) {
-            guard let index = items.firstIndex(of: oldItem) else {
-                return
+        if sortAscending {
+            switch selectedSortTitle {
+            case .name:
+                items.sort(by: { ($0.title < $1.title)})
+                items.sort(by: {!$0.isComplete && $1.isComplete })
+            case .priority:
+                items.sort(by: { ($0.priority < $1.priority)})
+                items.sort(by: {!$0.isComplete && $1.isComplete })
+            case .date:
+                items.sort(by: { ($0.finishDate < $1.finishDate)})                
+                items.sort(by: {!$0.isComplete && $1.isComplete })
+            case .completed:
+                items.sort(by: {$0.isComplete && !$1.isComplete })
+            case .uncompleted:
+                items.sort(by: {!$0.isComplete && $1.isComplete })
             }
-            items[index] = editedItem
-            saveItemsToFile()
         }
+        else {
+            switch selectedSortTitle {
+            case .name:
+                items.sort(by: { ($0.title > $1.title)})
+                items.sort(by: {!$0.isComplete && $1.isComplete })
+            case .priority:
+                items.sort(by: { ($0.priority > $1.priority)})
+                items.sort(by: {!$0.isComplete && $1.isComplete })
+            case .date:
+                items.sort(by: { ($0.finishDate > $1.finishDate)})
+                items.sort(by: {!$0.isComplete && $1.isComplete })
+            case .completed:
+                items.sort(by: {!$0.isComplete && $1.isComplete })
+            case .uncompleted:
+                items.sort(by: {$0.isComplete && !$1.isComplete })
+            }
+        }
+        
+    }
+    
+    public func updateItemsWithEditItem(oldItem: ToDoItem, editedItem: ToDoItem) {
+        guard let index = items.firstIndex(of: oldItem) else {
+            return
+        }
+        items[index] = editedItem
+        saveItemsToFile()
+    }
 }
