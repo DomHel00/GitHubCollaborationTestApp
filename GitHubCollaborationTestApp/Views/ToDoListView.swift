@@ -61,6 +61,15 @@ struct ToDoListView: View {
                     }
                 }
             }
+            .onChange(of: model.items, { _, _ in
+                model.sortItems(by: model.selectedSortTitle)
+            })
+            .onChange(of: model.selectedSortTitle, { _, newValue in
+                model.sortItems(by: newValue)
+            })
+            .onChange(of: model.sortAscending, { _, _ in
+                model.sortItems(by: model.selectedSortTitle)
+            })
             .navigationTitle("ToDo Items")
         }
     }
