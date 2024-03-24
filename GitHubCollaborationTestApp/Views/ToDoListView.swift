@@ -104,7 +104,7 @@ extension ToDoListView {
                     Image(systemName: SortTitle.priority == model.selectedSortTitle ? "checkmark" : "")
                 }
             }
-
+            
             Button {
                 model.sortItems(by: .completed)
             } label: {
@@ -113,7 +113,7 @@ extension ToDoListView {
                     Image(systemName: SortTitle.completed == model.selectedSortTitle ? "checkmark" : "")
                 }
             }
-
+            
             Button {
                 model.sortItems(by: .uncompleted)
             } label: {
@@ -126,7 +126,7 @@ extension ToDoListView {
             Text("Sort by:")
         }
     }
-
+    
     private var contentMenuSortOrder: some View {
         Section {
             // Ascending button
@@ -139,7 +139,7 @@ extension ToDoListView {
                     Image(systemName: model.sortAscending ? "checkmark" : "")
                 }
             }
-
+            
             // Descending button
             Button {
                 model.sortAscending = false

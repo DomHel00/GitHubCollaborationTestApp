@@ -16,22 +16,30 @@ enum SortOrder: String, CaseIterable {
 
 enum ToDoItemPriority: Codable, CaseIterable, Comparable {
     case none, low, normal, high
-
+    
     var title: String {
         switch self {
-        case .none: return "None"
-        case .low: return "Low"
-        case .normal: return "Normal"
-        case .high: return "High"
+        case .none:
+            return "None"
+        case .low:
+            return "Low"
+        case .normal:
+            return "Normal"
+        case .high:
+            return "High"
         }
     }
     
     var color: Color {
         switch self {
-        case .none: return .green
-        case .low: return .yellow
-        case .normal: return .orange
-        case .high: return .red
+        case .none:
+            return .green
+        case .low:
+            return .yellow
+        case .normal:
+            return .orange
+        case .high:
+            return .red
         }
     }
 }
@@ -50,7 +58,7 @@ struct ToDoItem: Codable, Identifiable {
             return Image(systemName: "circle")
         }
     }
-
+    
     init(title: String, finishDate: Date, priority: ToDoItemPriority) {
         self.title = title
         self.creationDate = .now
@@ -70,5 +78,5 @@ extension ToDoItem {
 extension ToDoItem: Equatable {
     static func ==(lhs: ToDoItem, rhs: ToDoItem) -> Bool {
         return lhs.id == rhs.id && lhs.title == rhs.title && lhs.creationDate == rhs.creationDate && lhs.finishDate == rhs.finishDate && lhs.isComplete == rhs.isComplete && lhs.priority == rhs.priority && lhs.symbol == rhs.symbol
-      }
+    }
 }

@@ -9,7 +9,7 @@ import Foundation
 
 struct Constants {
     static var fileURL: URL {
-         let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-         return path.appendingPathComponent("todos.json")
+        let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        return path.appendingPathComponent("todos.json")
     }
 }

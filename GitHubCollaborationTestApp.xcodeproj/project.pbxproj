@@ -122,12 +122,12 @@
 			isa = PBXGroup;
 			children = (
 				E90402312B7F5E6B002C4A85 /* GitHubCollaborationTestAppApp.swift */,
-				E90B38902BB039AF007F70C2 /* UserDefaultSettings.swift */,
-				445BFC762B83DE060019E424 /* Extension */,
 				44A7CD2F2B826F850088E981 /* ViewModels */,
 				E90402422B7F62C7002C4A85 /* Views */,
-				44A7CD2C2B826A3A0088E981 /* Models */,
 				E90402402B7F62AC002C4A85 /* Managers */,
+				E90B38922BB03BD1007F70C2 /* UserDefaults */,
+				44A7CD2C2B826A3A0088E981 /* Models */,
+				445BFC762B83DE060019E424 /* Extension */,
 				E90402412B7F62BC002C4A85 /* Others */,
 				E90402352B7F5E6D002C4A85 /* Assets.xcassets */,
 				E90402372B7F5E6D002C4A85 /* Preview Content */,
@@ -168,6 +168,14 @@
 				E99CC1542B84AA6800388768 /* EditItemView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E90B38922BB03BD1007F70C2 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				E90B38902BB039AF007F70C2 /* UserDefaultSettings.swift */,
+			);
+			path = UserDefaults;
 			sourceTree = "<group>";
 		};
 		E9D695292B9888F800802EA8 /* GitHubCollaborationTestAppTests */ = {

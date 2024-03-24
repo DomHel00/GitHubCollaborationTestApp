@@ -31,7 +31,7 @@ struct AddItemView: View {
                     }
                 }
                 .pickerStyle(.segmented)
-
+                
             }
         }
         .toolbar {

@@ -11,10 +11,10 @@ final class AddItemViewViewModel: ObservableObject {
     @Published var title: String = ""
     @Published var finishDate: Date = .now
     @Published var priority: ToDoItemPriority = .normal
-
+    
     var isValid: Bool {
         let trimmed = title.trimmingCharacters(in: .whitespacesAndNewlines)
-
+        
         if trimmed.isEmpty || trimmed == "" {
             return false
         }

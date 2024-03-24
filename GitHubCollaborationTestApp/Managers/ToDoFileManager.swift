@@ -2,15 +2,15 @@ import Foundation
 
 final class ToDoFileManager {
     public func loadDataFromFile<T: Codable>(file url: URL) throws -> T {
-            guard let data = try? Data(contentsOf: url) else {
-                throw JSONFileManagerError.invalidData
-            }
-
-            guard let decodedData = try? JSONDecoder().decode(T.self, from: data) else {
-                throw JSONFileManagerError.decoderError
-            }
-            return decodedData
+        guard let data = try? Data(contentsOf: url) else {
+            throw JSONFileManagerError.invalidData
         }
+        
+        guard let decodedData = try? JSONDecoder().decode(T.self, from: data) else {
+            throw JSONFileManagerError.decoderError
+        }
+        return decodedData
+    }
     
     
     public func updateFile<T: Codable>(for url: URL, items: T) throws {

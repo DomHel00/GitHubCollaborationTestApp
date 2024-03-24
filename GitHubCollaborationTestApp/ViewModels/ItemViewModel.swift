@@ -1,6 +1,6 @@
 import Foundation
 
-class ItemViewModel: ObservableObject {
+final class ItemViewModel: ObservableObject {
     @Published var items = [ToDoItem]()
     @Published var searchText = ""
     @Published var selectedSortTitle: SortTitle = UserDefaultSettings.shared.getSelectedSortTitle()
