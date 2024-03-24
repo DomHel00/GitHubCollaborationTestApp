@@ -65,9 +65,11 @@ struct ToDoListView: View {
                 model.sortItems(by: model.selectedSortTitle)
             })
             .onChange(of: model.selectedSortTitle, { _, newValue in
+                UserDefaultSettings.shared.setSelectedSortTitle(newValue: newValue)
                 model.sortItems(by: newValue)
             })
-            .onChange(of: model.sortAscending, { _, _ in
+            .onChange(of: model.sortAscending, { _, newValue in
+                UserDefaultSettings.shared.setSortAscending(newValue: newValue)
                 model.sortItems(by: model.selectedSortTitle)
             })
             .navigationTitle("ToDo Items")
