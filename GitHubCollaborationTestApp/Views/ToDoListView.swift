@@ -81,45 +81,57 @@ extension ToDoListView {
     private var contentMenuSortTitle: some View {
         Section {
             Button {
-                model.sortItems(by: .name)
+                model.selectedSortTitle = .name
             } label: {
-                HStack {
+                if  SortTitle.name == model.selectedSortTitle {
+                    Label(SortTitle.name.rawValue, systemImage: "checkmark")
+                }
+                else {
                     Text(SortTitle.name.rawValue)
-                    Image(systemName: SortTitle.name == model.selectedSortTitle ? "checkmark" : "")
                 }
             }
+            
             Button {
-                model.sortItems(by: .date)
+                model.selectedSortTitle = .date
             } label: {
-                HStack {
+                if  SortTitle.date == model.selectedSortTitle {
+                    Label(SortTitle.date.rawValue, systemImage: "checkmark")
+                }
+                else {
                     Text(SortTitle.date.rawValue)
-                    Image(systemName: SortTitle.date == model.selectedSortTitle ? "checkmark" : "")
                 }
             }
+            
             Button {
-                model.sortItems(by: .priority)
+                model.selectedSortTitle = .priority
             } label: {
-                HStack {
+                if  SortTitle.priority == model.selectedSortTitle {
+                    Label(SortTitle.priority.rawValue, systemImage: "checkmark")
+                }
+                else {
                     Text(SortTitle.priority.rawValue)
-                    Image(systemName: SortTitle.priority == model.selectedSortTitle ? "checkmark" : "")
                 }
             }
             
             Button {
-                model.sortItems(by: .completed)
+                model.selectedSortTitle = .completed
             } label: {
-                HStack {
+                if  SortTitle.completed == model.selectedSortTitle {
+                    Label(SortTitle.completed.rawValue, systemImage: "checkmark")
+                }
+                else {
                     Text(SortTitle.completed.rawValue)
-                    Image(systemName: SortTitle.completed == model.selectedSortTitle ? "checkmark" : "")
                 }
             }
             
             Button {
-                model.sortItems(by: .uncompleted)
+                model.selectedSortTitle = .uncompleted
             } label: {
-                HStack {
+                if  SortTitle.uncompleted == model.selectedSortTitle {
+                    Label(SortTitle.uncompleted.rawValue, systemImage: "checkmark")
+                }
+                else {
                     Text(SortTitle.uncompleted.rawValue)
-                    Image(systemName: SortTitle.uncompleted == model.selectedSortTitle ? "checkmark" : "")
                 }
             }
         } header: {
@@ -132,22 +144,24 @@ extension ToDoListView {
             // Ascending button
             Button {
                 model.sortAscending = true
-                model.sortItems(by: model.selectedSortTitle)
             } label: {
-                HStack {
+                if model.sortAscending {
+                    Label(SortOrder.ascending.rawValue, systemImage: "checkmark")
+                }
+                else {
                     Text(SortOrder.ascending.rawValue)
-                    Image(systemName: model.sortAscending ? "checkmark" : "")
                 }
             }
             
             // Descending button
             Button {
                 model.sortAscending = false
-                model.sortItems(by: model.selectedSortTitle)
             } label: {
-                HStack {
+                if !model.sortAscending {
+                    Label(SortOrder.descending.rawValue, systemImage: "checkmark")
+                }
+                else {
                     Text(SortOrder.descending.rawValue)
-                    Image(systemName: model.sortAscending ? "" : "checkmark" )
                 }
             }
         } header: {
