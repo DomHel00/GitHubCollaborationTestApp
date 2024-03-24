@@ -23,7 +23,7 @@ struct RowItemView: View {
                         .padding(.horizontal)
                         .background(RoundedRectangle(cornerRadius: 8).fill(item.priority.color))
                     
-                    Text("\(item.finishDate.dateFormat())")
+                    Text("Finish on \(item.finishDate.dateFormat())")
                         .opacity(0.6)
                 }
                 .font(.callout)
